@@ -1,12 +1,12 @@
 /* Variables */
 :root {
     /* Colors derived from Logo */
-    --primary-color: #E53935;
+    --primary-color: #870d4f;
     /* Red from hearts/person */
     --primary-dark: #C62828;
     --secondary-color: #1E88E5;
     /* Blue from person */
-    --accent-color: #FDD835;
+    --accent-color: #870d4f;
     /* Yellow from person */
     --bg-pink: #FFEBEE;
     /* Light pink background similar to logo bg */
@@ -83,12 +83,12 @@ img {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: #f18683;
     color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
+    background-color: #870D4F;
     transform: translateY(-2px);
 }
 
@@ -121,13 +121,13 @@ img {
 
 /* Header */
 .main-header {
-    background-color: var(--white);
+    background-color: #FFD6D6;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 4px solid var(--primary-color);
+    border-bottom: 2px solid #f18683;
     /* Accent line */
 }
 
@@ -135,11 +135,11 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 100px;
 }
 
 .logo img {
-    height: 70px;
+    height: 100px;
     /* Adjust based on logo aspect ratio */
     width: auto;
 }
@@ -173,14 +173,14 @@ img {
 }
 
 .btn-nav {
-    background-color: var(--secondary-color);
+    background-color: #870d4f;
     color: var(--white) !important;
     padding: 10px 25px;
     border-radius: 50px;
 }
 
 .btn-nav:hover {
-    background-color: #1565C0 !important;
+    background-color: #f18683 !important;
 }
 
 .mobile-menu-toggle {
@@ -283,7 +283,7 @@ img {
 .badge {
     display: inline-block;
     background-color: var(--accent-color);
-    color: var(--text-color);
+    color: white;
     padding: 6px 12px;
     border-radius: 4px;
     font-size: 0.85rem;
@@ -302,9 +302,9 @@ img {
 }
 
 /* Grid System */
-.grid-3 {
+.grid-4 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
     gap: 40px;
 }
 
@@ -346,7 +346,7 @@ img {
 
 .card-content h3 {
     font-size: 1.6rem;
-    color: var(--text-color);
+    color: #870D4F;
     margin-bottom: 15px;
 }
 
@@ -437,11 +437,49 @@ img {
 
 /* Footer */
 .main-footer {
-    background-color: #2c3e50;
+    background-color: #FFD6D6;
     /* Darker footer */
-    color: var(--white);
+    color: #870d4f;
     padding: 60px 0;
     text-align: center;
+}
+
+/* --- ESTILOS PARA EL SLIDER DE VOLUNTARIADO --- */
+
+.slider-wrapper {
+    /* Limita la vista al área de 3 imágenes */
+    overflow: hidden;
+    margin: 2rem auto;
+    max-width: 100%!important;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.slider-track {
+    /* Define el carril. La longitud se ajustará en JS, pero el bucle infinito necesita más espacio */
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+    max-width:100%;
+    /* El ancho total del track será del 400% (4 slides visibles de 3 items cada uno, más el margen para el bucle) */
+}
+
+.slider-item {
+    /* Cada imagen ocupa 1/3 del ancho visible */
+    width: 33.3333%; 
+    height: auto; 
+    min-width: 33.3333%; 
+    display: block;
+    object-fit: cover; 
+}
+
+/* Opcional: Estilos para darle un poco de margen al contenido que rodea el slider */
+.mt-4 {
+    margin-top: 2rem;
+}
+
+#descr-vol{
+    text-align:center;
 }
 
 /* Responsive */
